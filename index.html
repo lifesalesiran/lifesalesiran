@@ -1,103 +1,177 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>لایف | فروش اقساطی لوازم خانگی</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فروشگاه لایف</title>
 
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      background: #f4f6f8;
-      color: #333;
-      text-align: center;
-    }
+<style>
+body{
+  margin:0;
+  font-family:tahoma;
+  background:#f5f6f8;
+}
 
-    header {
-      background: linear-gradient(90deg, #0d6efd, #0a58ca);
-      color: white;
-      padding: 50px 20px;
-    }
+/* هدر */
+header{
+  background:#e30000;
+  color:white;
+  padding:15px;
+  text-align:center;
+  font-size:18px;
+  font-weight:bold;
+}
 
-    section {
-      padding: 30px 15px;
-    }
+/* سرچ */
+.search{
+  text-align:center;
+  padding:10px;
+}
 
-    .box {
-      background: white;
-      margin: 15px auto;
-      padding: 20px;
-      max-width: 600px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
+.search input{
+  width:80%;
+  padding:10px;
+  border-radius:10px;
+  border:1px solid #ccc;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 10px 18px;
-      margin-top: 10px;
-      background: #0d6efd;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-    }
+/* دسته بندی */
+.categories{
+  display:flex;
+  overflow-x:auto;
+  gap:10px;
+  padding:10px;
+}
 
-    .btn-green {
-      background: #25D366;
-    }
+.cat{
+  background:white;
+  padding:8px 12px;
+  border-radius:20px;
+  white-space:nowrap;
+  cursor:pointer;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
 
-    footer {
-      background: #222;
-      color: white;
-      padding: 15px;
-      margin-top: 30px;
-    }
-  </style>
+/* گرید */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:15px;
+  padding:15px;
+}
+
+/* کارت */
+.card{
+  background:white;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:scale(1.03);
+}
+
+.card img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+}
+
+.card h3{
+  font-size:14px;
+  margin:10px;
+}
+
+.price{
+  color:green;
+  font-weight:bold;
+  margin:0 10px;
+}
+
+.btn{
+  display:block;
+  text-align:center;
+  margin:10px;
+  padding:8px;
+  background:#e30000;
+  color:white;
+  border-radius:8px;
+  text-decoration:none;
+}
+
+/* پایین */
+.footer{
+  text-align:center;
+  padding:15px;
+  font-size:12px;
+  color:#666;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>برند لایف</h1>
-  <p>فروش اقساطی لوازم خانگی در سراسر ایران</p>
+فروشگاه لایف | شبیه دیجی‌کالا
 </header>
 
-<section>
+<div class="search">
+<input id="search" onkeyup="searchProduct()" placeholder="جستجوی محصول...">
+</div>
 
-  <div class="box">
-    <h2>🔥 محصولات ما</h2>
-    <p>یخچال، تلویزیون، ماشین لباسشویی، کولر، جاروبرقی</p>
-  </div>
+<div class="categories">
+<div class="cat">همه</div>
+<div class="cat">یخچال</div>
+<div class="cat">گاز</div>
+<div class="cat">لباسشویی</div>
+<div class="cat">تلویزیون</div>
+</div>
 
-  <div class="box">
-    <h2>💳 خرید اقساطی</h2>
-    <p>بدون ضامن | پرداخت آسان | تحویل سریع</p>
-  </div>
+<div class="grid" id="products">
 
-  <div class="box">
-    <h2>🛒 سفارش سریع</h2>
-    <p>برای ثبت سفارش روی واتساپ کلیک کن</p>
-    <a class="btn btn-green" href="https://wa.me/989000000000">ارسال پیام واتساپ</a>
-  </div>
+<!-- محصول 1 -->
+<div class="card">
+<img src="images/fridge.jpg">
+<h3>یخچال سامسونگ</h3>
+<p class="price">25,000,000 تومان</p>
+<a class="btn" href="#">مشاهده</a>
+</div>
 
-  <div class="box">
-    <h2>🤝 درخواست نمایندگی</h2>
-    <p>در شهر خودت نماینده فروش لایف شو</p>
-    <a class="btn" href="mailto:example@gmail.com">ارسال درخواست</a>
-  </div>
+<!-- محصول 2 -->
+<div class="card">
+<img src="images/gas.jpg">
+<h3>اجاق گاز استیل</h3>
+<p class="price">8,500,000 تومان</p>
+<a class="btn" href="#">مشاهده</a>
+</div>
 
-  <div class="box">
-    <h2>📞 تماس با ما</h2>
-    <p>پشتیبانی و مشاوره خرید</p>
-    <p>تلفن: 0912XXXXXXX</p>
-  </div>
+<!-- محصول 3 -->
+<div class="card">
+<img src="images/washer.jpg">
+<h3>لباسشویی LG</h3>
+<p class="price">18,000,000 تومان</p>
+<a class="btn" href="#">مشاهده</a>
+</div>
 
-</section>
+</div>
 
-<footer>
-  © 2026 Life - All Rights Reserved
-</footer>
+<div class="footer">
+© فروشگاه لایف - همه حقوق محفوظ است
+</div>
+
+<script>
+function searchProduct(){
+  let input = document.getElementById("search").value.toLowerCase();
+  let cards = document.querySelectorAll(".card");
+
+  cards.forEach(card=>{
+    let title = card.querySelector("h3").innerText.toLowerCase();
+    card.style.display = title.includes(input) ? "block":"none";
+  });
+}
+</script>
 
 </body>
 </html>
